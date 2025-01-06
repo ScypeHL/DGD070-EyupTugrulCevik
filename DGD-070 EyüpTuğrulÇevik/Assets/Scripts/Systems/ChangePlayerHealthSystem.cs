@@ -18,9 +18,9 @@ public class ChangePlayerHealthSystem : IExecuteSystem
 
     public void Execute()
     {
-        Dpressed = Input.GetKeyDown(KeyCode.D);
-        Hpressed = Input.GetKeyDown(KeyCode.H);
-        Qpressed = Input.GetKey(KeyCode.Q);
+        // Dpressed = Input.GetKeyDown(KeyCode.D);
+        // Hpressed = Input.GetKeyDown(KeyCode.H);
+        // Qpressed = Input.GetKey(KeyCode.Q);
 
         GameEntity[] entities = contexts.game.GetEntities(GameMatcher.AllOf(GameMatcher.PlayerHealth));
 
