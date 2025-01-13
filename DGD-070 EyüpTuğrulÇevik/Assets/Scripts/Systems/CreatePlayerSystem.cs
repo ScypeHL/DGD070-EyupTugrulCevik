@@ -1,27 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Entitas;
+using static UnityEditor.Timeline.TimelinePlaybackControls;
 
-public class GameStarter : MonoBehaviour
+public class CreatePlayerSystem : IInitializeSystem
 {
     GameContext contexts;
-
-    public GameStarter(Contexts context)
+    public CreatePlayerSystem(Contexts context)
     {
         contexts = context.game;
     }
-    private void Start()
+    public void Initialize()
     {
-        contexts = Contexts.sharedInstance.game;
-        
         GameEntity player = contexts.CreateEntity();
         player.AddPosition(new Vector3(0, 0, 0));
-        player.AddSpeed(1);
+        player.AddSpeed(12);
         player.isPinned = false;
+        player.isPlayer = true;
+        player.isSpawnPlayer = true;
     }
-    private void Update()
-    {
-
-    }
-
 }

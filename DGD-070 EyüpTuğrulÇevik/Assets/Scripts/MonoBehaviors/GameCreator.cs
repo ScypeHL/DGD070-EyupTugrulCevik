@@ -9,6 +9,7 @@ public class GameCreator : MonoBehaviour
     private InputFeature inputFeature;
     private PlayerHealthFeature playerHealthFeature;
     private MovementFeature movementFeature;
+    private RenderDisplayFeature renderFeature;
     private void Start()
     {
         contexts = Contexts.sharedInstance;
@@ -17,16 +18,19 @@ public class GameCreator : MonoBehaviour
         inputFeature = new InputFeature(contexts);
         playerHealthFeature = new PlayerHealthFeature(contexts);
         movementFeature = new MovementFeature(contexts);
+        renderFeature = new RenderDisplayFeature(contexts);
 
         combatFeature.Initialize();
         inputFeature.Initialize();
         playerHealthFeature.Initialize();
         movementFeature.Initialize();
+        renderFeature.Initialize();
     }
     private void Update()
     {
         playerHealthFeature.Execute();
         movementFeature.Execute();
+        renderFeature.Execute();
     }
 
     private void FixedUpdate()
@@ -41,5 +45,6 @@ public class GameCreator : MonoBehaviour
         inputFeature.Cleanup();
         playerHealthFeature.Cleanup();
         movementFeature.Cleanup();
+        renderFeature.Cleanup();
     }
 }

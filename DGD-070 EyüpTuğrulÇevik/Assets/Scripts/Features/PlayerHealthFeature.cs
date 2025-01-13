@@ -13,5 +13,6 @@ public class PlayerHealthFeature : Feature
         Add(new CreatePlayerHealthSystem(contexts));
         Add(new ChangePlayerHealthSystem(contexts));
         Add(new CheckPlayerHealthSystem(contexts));
+        Add(new CreatePlayerSystem(contexts));
     }
 }

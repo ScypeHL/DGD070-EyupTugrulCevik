@@ -20,12 +20,11 @@ public class MovementSystem : IExecuteSystem
         foreach (InputEntity inputs in inputEntities)
         {
             applyInput = inputs.axisInput.Value;
-            Debug.Log(applyInput);
         }
         
         foreach (GameEntity entity in entities)
         {
-            Vector3 positionChance = entity.position.Value + (applyInput * entity.speed.Value);
+            Vector3 positionChance = entity.position.Value + (applyInput * entity.speed.Value) * Time.deltaTime;
             entity.ReplacePosition(positionChance);
 
 

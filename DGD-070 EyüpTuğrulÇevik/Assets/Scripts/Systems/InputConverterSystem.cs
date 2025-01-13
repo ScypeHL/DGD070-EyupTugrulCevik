@@ -21,7 +21,7 @@ public class InputConverterSystem : IExecuteSystem
         horizontalInput = Input.GetAxis("Horizontal");
         contexts.ReplaceHorizontalInput(horizontalInput);
 
-        contexts.ReplaceAxisInput(new Vector3(horizontalInput, verticalInput, 0));
+        contexts.ReplaceAxisInput(new Vector3(horizontalInput, 0, verticalInput));
 
         if (Input.GetMouseButtonDown(0))
         {

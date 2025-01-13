@@ -12,16 +12,9 @@ public class CreatePlayerHealthSystem : IInitializeSystem
     {
         gameContext = context.game;
     }
+
     public void Initialize()
     {
-        CreateEntity();
-    }
 
-    private void CreateEntity()
-    {
-        GameEntity entity = gameContext.CreateEntity();
-        entity.AddPlayerHealth(100);
-        entity.isPlayerDamaged = false;
-        entity.isPlayerHealed = false;
     }
 }
